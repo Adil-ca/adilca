@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adil CA · Three archive studies</title>
+  <style>
+    :root { color-scheme: light; --paper:#f1ebdd; --ink:#171717; --signal:#f15a24; --cobalt:#3155d9; --lime:#c7ef54 }
+    * { box-sizing:border-box }
+    body { background:#d6d1c7; color:var(--ink); font:16px Arial, sans-serif; margin:0 }
+    main { width:min(1220px,94%); margin:40px auto }
+    main>header { display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap }
+    h1 { font:italic normal clamp(1.8rem,4vw,3.8rem) Georgia,serif; margin:0 }
+    nav { display:flex; flex-wrap:wrap; gap:12px }
+    nav a { color:inherit; text-underline-offset:4px; padding:10px 0 }
+    .study { margin:42px 0; scroll-margin:20px }
+    .caption { font:600 0.79rem/1.4 monospace; margin:0 0 8px }
+    .board { overflow:hidden; border:1px solid var(--ink); padding:clamp(20px,4vw,48px); container-type:inline-size }
+    .mast,.foot { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; font:600 0.85rem/1.2 monospace }
+    .mast { padding-bottom:16px; border-bottom:1px solid currentColor }
+    .foot { padding-top:16px; border-top:1px solid currentColor }
+    h2,p,figure { margin:0 }
+    .paper { background:var(--paper) }
+    .paper .spread { display:grid; align-items:center; gap:4%; grid-template-columns:1.24fr 1fr; margin:48px 0 }
+    .paper h2 { font:900 clamp(2rem,7.4cqw,6rem)/.93 Arial,sans-serif; letter-spacing:-.077em }
+    .paper em { color:#b34018; font:italic normal 1.14em/.94 Georgia,serif; letter-spacing:-.08em }
+    .paper p { max-width:31em; line-height:1.4; margin-top:20px }
+    .exhibit { background:var(--signal); padding:32px 14%; display:grid; justify-items:center; position:relative; border:1px solid var(--ink); color:var(--ink) }
+    .computer { width:100%; max-width:204px; aspect-ratio:1.07; border:3px solid; border-radius:10px 10px 3px 3px; background:#e5d3aa; box-shadow:9px 6px var(--ink); padding:9%; transform:rotate(-6deg) }
+    .screen { height:72%; border:6px solid #86775c; border-radius:10%; background:var(--ink); color:var(--signal); display:grid; place-items:center; font:bold clamp(1rem,3cqw,3rem) monospace }
+    .drive { border-bottom:5px solid; width:30%; margin:13% 0 0 auto }
+    .keyboard { width:96%; margin-top:16px; height:16px; transform:skew(-25deg) rotate(-6deg); border:3px solid; background:repeating-linear-gradient(90deg,#c7b387 0 8px,#282317 8px 10px); box-shadow:3px 3px var(--ink) }
+    .inverse { background:var(--ink); color:#c6e6a0 }
+    .inverse h2 { font:600 clamp(2rem,6.8cqw,5.6rem)/1 monospace; letter-spacing:-.09em; margin:42px 0 }
+    .inverse .directory { display:grid; grid-template-columns:1fr 1.25fr; gap:8%; align-items:start; margin-bottom:38px }
+    .directory p { font:normal 1.05rem/1.4 monospace; color:#eee9d4 }
+    .directory ul { list-style:none; margin:0; padding:0; font:500 1.05rem/1.1 monospace }
+    .directory li { border-top:1px solid #5e7050; padding:9px 4px }
+    .directory li:first-child { background:var(--lime); color:var(--ink) }
+    .sleeve { background:var(--cobalt); color:#fcf6e8; padding-bottom:0 }
+    .sleeve .spread { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:8%; margin:40px 0 0 }
+    .sleeve h2 { font:normal clamp(2rem,8cqw,6.7rem)/.88 Georgia,serif; letter-spacing:-.09em }
+    .sleeve p { margin:24px 0; line-height:1.4; max-width:33em }
+    .file { position:relative; background:#f2e5ca; color:var(--ink); border:2px solid; box-shadow:12px 12px 0 #18368f; padding:30px 22px 55px; align-self:end; transform:rotate(6deg) translateY(16px); min-height:210px }
+    .file:before { content:""; position:absolute; height:16px; width:40%; border:2px solid; border-bottom:0; top:-18px; left:-2px; background:inherit }
+    .file small { font:600 .8rem monospace }
+    .file strong { display:block; font:italic normal clamp(2rem,5cqw,4rem)/1.05 Georgia,serif; margin:25px 0 }
+    .file hr { border:0; border-bottom:1px solid }
+    @media(max-width:650px) {
+      .paper .spread,.sleeve .spread,.inverse .directory { grid-template-columns:1fr; gap:23px }
+      .exhibit { padding:24px 20%; min-height:175px }
+      .paper h2,.sleeve h2,.inverse h2 { font-size:clamp(2.5rem,11vw,5rem) }
+      .file { margin:0 6%; min-height:130px }
+      .foot,.mast { font-size:.76rem }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>Three archive studies</h1><nav aria-label="Studies"><a href="#paper">Paper terminal</a><a href="#phosphor">Phosphor index</a><a href="#sleeve">Case sleeve</a></nav></header>
+    <section class="study" id="paper" aria-labelledby="paper-title"><p class="caption">Paper terminal / selected direction</p>
+      <div class="board paper"><div class="mast"><b>ADIL.CA</b><span>THE DIGITAL ARCHIVE</span></div>
+        <div class="spread"><div><h2 id="paper-title">I BUILD THINGS<br>FOR THE<br><em>Internet.</em></h2><p>I’m Adil, a full-stack developer and Web3 community builder.</p></div>
+          <figure class="exhibit" role="img" aria-label="Sketch of a vintage desktop computer on signal-orange paper"><div class="computer"><div class="screen">&gt;_</div><div class="drive"></div></div><div class="keyboard"></div></figure>
+        </div><div class="foot"><b>Selected work</b><span>MandateMukti / Sahaaya Relay</span></div>
+      </div>
+    </section>
+    <section class="study" id="phosphor" aria-labelledby="phosphor-title"><p class="caption">Phosphor index</p>
+      <div class="board inverse"><div class="mast"><b>adil.ca</b><span>~/archive</span></div>
+        <h2 id="phosphor-title">&gt; open archive<span aria-hidden="true">_</span></h2>
+        <div class="directory"><p>Software, onchain experiments and community work by Adil CA.</p><ul><li>/work/mandatemukti</li><li>/work/sahaaya-relay</li><li>/work/venodesign</li></ul></div>
+        <div class="foot"><b>Index</b><span>Work / About / Contact</span></div>
+      </div>
+    </section>
+    <section class="study" id="sleeve" aria-labelledby="sleeve-title"><p class="caption">Cobalt case sleeve</p>
+      <div class="board sleeve"><div class="mast"><b>Adil CA</b><span>Case files</span></div>
+        <div class="spread"><div><h2 id="sleeve-title">An archive<br>of builds.</h2><p>Projects from product development, Web3 communities and experiments in AI.</p></div>
+          <div class="file"><small>PRODUCT DEVELOPMENT</small><strong>MandateMukti</strong><hr><small>UPI AutoPay &amp; e-mandates</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
