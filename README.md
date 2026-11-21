@@ -2,6 +2,8 @@
 
 Adil CA’s personal portfolio. The homepage pairs a print illustration of a workstation with a searchable archive of five featured projects and six experiments. All eleven records have their own case study. Fifteen real interface captures accompany the project files.
 
+![Homepage with freestanding interactive workstation](output/playwright/desktop.png)
+
 ## Run locally
 
 Use Node.js 24 and npm. From the project directory, run:
@@ -22,7 +24,7 @@ npm run build
 npm start
 ```
 
-The Next.js App Router pre-renders the homepage and case studies. Fonts ship with the application. The hero uses responsive AVIF with WebP fallbacks. Project captures use the Next.js image optimizer.
+The Next.js App Router pre-renders the homepage and case studies. Fonts ship with the application. The hero uses a transparent cutout of the original workstation and a still frame of its video underneath the interactive CRT. Set `NEXT_PUBLIC_CRT_VIDEO_SRC` and `NEXT_PUBLIC_CRT_POSTER_SRC` before building to supply replacement footage and a matching poster. Project captures use the Next.js image optimizer.
 
 ## Update the archive
 

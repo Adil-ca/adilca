@@ -1,7 +1,9 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useId, useRef } from "react";
 
 const SOURCE = process.env.NEXT_PUBLIC_CRT_VIDEO_SRC || "/art/crt-scrub.mp4";
+const POSTER = process.env.NEXT_PUBLIC_CRT_POSTER_SRC || "/art/crt-poster.webp";
 const SENSITIVITY = 0.8;
 // Glass outline from the illustration's 680 × 544 reference frame.
 const GLASS =
@@ -38,6 +40,11 @@ export default function CrtDisplay() {
       requestedTime = targetTime;
       seeking = true;
       video.currentTime = requestedTime;
+      // Keep reflected light tied to the displayed sequence, even during fast drags.
+      video.parentElement?.style.setProperty(
+        "--reflection-x",
+        30 + (18 * requestedTime) / video.duration + "%",
+      );
     }
     function schedule() {
       if (!frame && !seeking) frame = requestAnimationFrame(seek);
@@ -146,6 +153,15 @@ export default function CrtDisplay() {
         </defs>
       </svg>
       <div className="crt-glass" style={{ clipPath: `url(#${clip})` }}>
+        <Image
+          className="crt-poster"
+          src={POSTER}
+          width={800}
+          height={452}
+          alt=""
+          unoptimized
+          preload
+        />
         <video
           ref={videoRef}
           muted

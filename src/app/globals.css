@@ -1300,19 +1300,66 @@ dialog::backdrop {
 .journal-preview figcaption{font:.76rem var(--mono);padding-top:8px}
 @media(max-width:760px){#mobile-nav{grid-template-columns:1fr 1fr}#mobile-nav a:nth-child(3){grid-column:span 2;grid-row:2}.journal-preview{grid-template-columns:1fr;gap:22px}}
 
-/* The alpha cutout and the CRT overlay share the original artwork coordinates. */
-.workbench {width:min(100%, 650px);margin:0 auto;align-self:center;}
-.crt-frame {position:relative;isolation:isolate;}
-.crt-frame::before {content:"";position:absolute;z-index:-1;left:12%;right:9%;bottom:3%;height:11%;border-radius:50%;background:#382715;opacity:.12;filter:blur(9px);transform:rotate(4deg);}
-.crt-frame > img {width:100%;height:auto;display:block;filter:drop-shadow(0 2px 1px #39291224);}
-.workbench figcaption {display:block;text-align:right;margin:14px 4% 0;font:500 .72rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-.crt-display {position:absolute;inset:0;pointer-events:none;}
-.crt-glass {position:absolute;left:29.411765%;top:9.375%;width:34.705882%;height:38.419118%;background:#20130b;overflow:hidden;}
-.crt-glass::before,.crt-glass video {position:absolute;inset:0;width:100%;height:100%;transform:perspective(650px) rotateY(-7deg) rotateZ(-1.6deg) scale(1.09);filter:grayscale(1) sepia(.9) saturate(2.3) hue-rotate(340deg) contrast(1.09) brightness(.93);}
-.crt-glass::before {content:"";background:url("/art/crt-poster.webp") 82% center / cover no-repeat;}
-.crt-glass video {object-fit:cover;object-position:82% center;opacity:0;touch-action:pan-y pinch-zoom;pointer-events:auto;}
-.crt-glass video[data-ready] {opacity:1;cursor:ew-resize;}
-.crt-glass::after {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 48% 48%,#ffc4810c 18%,transparent 55%,#1d0e0880 96%),repeating-linear-gradient(0deg,transparent 0 2px,#240c0024 2px 3px);}
-.workbench:not(:has(video[data-ready])) figcaption {visibility:hidden;}
-@media(prefers-reduced-motion:reduce){.crt-glass video,.workbench figcaption{visibility:hidden;}}
-@media(max-width:760px){.workbench{width:min(94%,530px);}.workbench figcaption{margin-top:10px;}}
+
+/* Both layers use the original 680 × 544 illustration as their coordinate space. */
+.workbench {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  align-self: center;
+}
+.crt-frame { position: relative; isolation: isolate; }
+.crt-frame::before, .crt-frame::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #443821;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.crt-frame::before {
+  left: 3%; bottom: 4.8%; width: 71%; height: 7%;
+  opacity: .19; filter: blur(5px); transform: rotate(6deg);
+}
+.crt-frame::after {
+  right: 6%; bottom: 2.5%; width: 15%; height: 4%;
+  opacity: .16; filter: blur(3px); transform: rotate(-9deg);
+}
+.crt-frame > img { width: 100%; height: auto; display: block; }
+.workbench figcaption {
+  text-align: right;
+  margin: 14px 4% 0;
+  font: 500 .72rem/1.4 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.crt-display { position: absolute; inset: 0; pointer-events: none; }
+.crt-glass {
+  position: absolute;
+  left: 29.411765%; top: 9.375%; width: 34.705882%; height: 38.419118%;
+  overflow: hidden;
+}
+.crt-poster, .crt-glass video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 82% center;
+  transform: perspective(650px) rotateY(-9deg) rotateZ(-1.6deg) skewX(-2deg) scale(1.1);
+  filter: grayscale(1) sepia(.88) saturate(2.2) hue-rotate(340deg) contrast(1.09) brightness(.93);
+}
+.crt-glass video { opacity: 0; touch-action: pan-y pinch-zoom; pointer-events: auto; }
+.crt-glass video[data-ready] { opacity: 1; cursor: ew-resize; }
+.crt-glass::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at var(--reflection-x, 30%) 18%, #fff1ce18, transparent 48%),
+    radial-gradient(ellipse at 50% 48%, transparent 43%, #30170745 77%, #170c089c 100%),
+    repeating-linear-gradient(1deg, transparent 0 2px, #2a120421 2px 3px);
+}
+.workbench:not(:has(video[data-ready])) figcaption { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .crt-glass video, .workbench figcaption { visibility: hidden; }
+}
+@media (max-width: 760px) {
+  .workbench { width: min(96%, 530px); }
+  .workbench figcaption { margin-top: 10px; }
+}
