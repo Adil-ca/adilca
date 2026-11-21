@@ -11,15 +11,15 @@
   gap: 16px;
 }
 .journal-mast {
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 2px solid var(--color-text);
   padding-bottom: 20px;
 }
 .journal-mast h1 {
-  font: 800 clamp(3.4rem, 6.7vw, 7rem)/0.95 var(--display);
+  font: 400 clamp(3.4rem, 6.7vw, 7rem)/0.95 var(--font-display);
   letter-spacing: -0.035em;
 }
 .journal-mast h1 span {
-  color: var(--print);
+  color: var(--color-text);
 }
 .journal-mast p,
 .journal-first {
@@ -52,8 +52,8 @@
   display: block;
   position: relative;
   padding: 0;
-  border: 1px solid var(--ink);
-  background: var(--paper);
+  border: 1px solid var(--color-text);
+  background: var(--color-background);
   cursor: zoom-in;
 }
 .journal-print img {
@@ -65,8 +65,8 @@
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: var(--paper);
-  border: 1px solid var(--ink);
+  background: var(--color-background);
+  border: 1px solid var(--color-text);
   width: 30px;
   height: 30px;
   display: grid;
@@ -86,17 +86,17 @@
 .journal-print figcaption b {
   border-right: 1px solid var(--line);
   padding-right: 9px;
-  color: var(--print);
+  color: var(--color-text);
 }
 .journal-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-block: 1px solid var(--ink);
+  border-block: 1px solid var(--color-text);
   padding: 16px 0;
   gap: 12px;
 }
 .journal-stats dt {
-  font: 800 2rem/1 var(--display);
+  font: 400 2rem/1 var(--font-display);
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -109,7 +109,7 @@
 }
 .journal-story aside {
   max-width: 32ch;
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--color-accent);
   padding-left: 18px;
 }
 .journal-story aside strong {
@@ -132,7 +132,7 @@
   margin-top: 1em;
 }
 .journal-chapter {
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--color-text);
   margin-bottom: 52px;
 }
 .chapter-head {
@@ -140,7 +140,7 @@
   margin: 14px 0 22px;
 }
 .chapter-head h3 {
-  font: 800 clamp(2.5rem, 4.7vw, 5rem)/1 var(--display);
+  font: 400 clamp(2.5rem, 4.7vw, 5rem)/1 var(--font-display);
   letter-spacing: -0.025em;
 }
 .journal-plates {
@@ -174,10 +174,10 @@
 }
 .journal-viewer {
   width: min(94vw, 1250px);
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--color-surface);
+  color: var(--color-text);
   max-height: 96dvh;
-  border: 1px solid var(--paper);
+  border: 1px solid var(--color-text);
 }
 .viewer-top,
 .viewer-foot {
@@ -187,14 +187,19 @@
 .journal-viewer button {
   display: grid;
   place-items: center;
-  background: transparent;
-  border: 1px solid #aaa;
-  color: var(--paper);
+  background: var(--color-background);
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
   width: 44px;
   height: 44px;
   flex: none;
 }
+.journal-viewer button:hover,
+.journal-print button:hover .expand {
+  background: var(--color-accent);
+}
 .viewer-picture {
+  background: var(--color-featured);
   position: relative;
   height: min(72dvh, 850px);
   touch-action: pan-y pinch-zoom;
@@ -273,4 +278,15 @@
 
 .journal-cover h2 {
   text-wrap: balance;
+}
+.journal-stats {
+  padding-inline: clamp(12px, 2vw, 24px);
+}
+.journal-stats dt {
+  font-size: clamp(1.45rem, 2.3vw, 2.2rem);
+  line-height: 1.15;
+}
+.journal-mast h1,
+.chapter-head h3 {
+  line-height: 1.07;
 }

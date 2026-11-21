@@ -10,20 +10,19 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.2.0",
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "lucide-react": "^0.577.0",
     "next": "16.4.6",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "lucide-react": "^0.577.0",
-    "@fontsource/barlow-condensed": "^5.2.0",
-    "@fontsource-variable/dm-sans": "^5.2.0",
-    "@fontsource/ibm-plex-mono": "^5.2.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "typescript": "~5.9.3",
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.6"
+    "eslint-config-next": "16.4.6",
+    "typescript": "~5.9.3"
   }
 }

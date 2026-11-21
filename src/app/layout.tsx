@@ -5,21 +5,6 @@ import { projects } from "@/data/archive";
 import { identity } from "@/data/site";
 import { origin } from "@/lib/origin";
 import "./globals.css";
-const display = localFont({
-  src: [
-    {
-      path: "../../node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-800-normal.woff2",
-      weight: "800",
-    },
-    {
-      path: "../../node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-800-italic.woff2",
-      weight: "800",
-      style: "italic",
-    },
-  ],
-  variable: "--display-font",
-  display: "swap",
-});
 const sans = localFont({
   src: "../../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2",
   variable: "--body-font",
@@ -32,7 +17,7 @@ const mono = localFont({
   weight: "500",
   display: "swap",
 });
-export const viewport: Viewport = { themeColor: "#F4612B" };
+export const viewport: Viewport = { themeColor: "#E3FDFD" };
 
 export const metadata: Metadata = {
   metadataBase: origin,
@@ -46,7 +31,11 @@ export const metadata: Metadata = {
         type: "image/png",
       })),
     ],
-    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
   },
   title: { default: identity.title, template: "%s | Adil CA" },
   description: identity.description,
@@ -76,10 +65,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={[display.variable, sans.variable, mono.variable].join(" ")}
-    >
+    <html lang="en" className={[sans.variable, mono.variable].join(" ")}>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/Matcha-Squishy.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <a className="skip" href="#main">
           Skip to content

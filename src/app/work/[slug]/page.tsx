@@ -87,7 +87,7 @@ export default async function CaseStudy({ params }: Props) {
           </div>
         </dl>
         {hasCapture(slug) && (
-          <figure className={"case-preview " + (plate?.color || "mint")}>
+          <figure className={"case-preview " + (plate?.color || "plate-teal")}>
             <div className="case-frame">
               <div className="window-bar">
                 <span>
@@ -175,7 +175,7 @@ export default async function CaseStudy({ params }: Props) {
             {(p.live || p.source) && (
               <div className="cta-row case-actions">
                 {p.live && (
-                  <a className="button orange" href={p.live}>
+                  <a className="button primary" href={p.live}>
                     <Globe size={16} />{" "}
                     {slug === "mern-task-dashboard"
                       ? "Frontend preview"

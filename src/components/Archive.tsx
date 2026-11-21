@@ -50,7 +50,7 @@ export default function Archive({ records }: { records: Card[] }) {
               className={
                 "project-card " +
                 (i === 0 ? "lead " : "") +
-                (plates[p.slug]?.color || "mint")
+                (plates[p.slug]?.color || "plate-teal")
               }
             >
               <div className="cover">

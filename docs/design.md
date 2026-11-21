@@ -18,8 +18,8 @@ The following original studies are on the [Superdesign project canvas](https://s
 
 | Element | Direction for implementation |
 | --- | --- |
-| Foundation | Warm paper `#F1EBDD`, ink `#171717`, signal orange `#F15A24`, cobalt `#3155D9` and a sparing acid lime `#C7EF54`. Use ink on orange and lime controls. Reserve a deeper orange for small text on paper. |
-| Display | Compact heavy sans for the identity statement. Give the closing word a contrasting editorial italic. Keep the heading as live text. |
+| Foundation | Ice Mint `#E3FDFD` for the page, Soft Aqua `#CBF1F5` for sections, Pastel Cyan `#A6E3E9` for featured surfaces, and Ocean Teal `#71C9CE` for accents. Deep Teal Ink `#164B50` carries type and rules. The footer reverses to Ice Mint on ink. |
+| Display | Matcha Squishy sets the headline, project names, journal titles and statistics. An Ocean Teal underline emphasizes selected words. |
 | Reading | Use a sans text face at 16px or above, 1.45–1.65 line height. Set case-study sections in a narrower measure than the imagery. |
 | Labels | Reserve mono for index labels, commands, metadata and control hints. Apply uppercase selectively. |
 | Grid | Share outer margins across masthead, opening spread and project index. The desktop introduction occupies slightly more than half the spread. Linearize in semantic order on mobile. |

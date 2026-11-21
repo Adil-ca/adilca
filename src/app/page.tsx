@@ -65,7 +65,7 @@ export default function Home() {
             </h1>
             <p className="intro-text">{identity.intro}</p>
             <div className="cta-row">
-              <Link href="#work" className="button orange">
+              <Link href="#work" className="button primary">
                 <FolderOpen /> Explore my work
               </Link>
               <Link href="#contact" className="button light">
